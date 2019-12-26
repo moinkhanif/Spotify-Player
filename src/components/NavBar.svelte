@@ -56,7 +56,7 @@
 <Router>
   <nav>
     <div class="logo">
-      <NavLink to="{routes.home}">
+      <NavLink  to="{routes.home}">
         <Logo/>
       </NavLink>
     </div>

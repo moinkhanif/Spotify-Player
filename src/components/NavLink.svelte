@@ -1,18 +1,26 @@
 <script>
-  import {Link} from "svelte-routing";
-
+  import { Link } from "svelte-routing";
   export let to;
 
-  function getProps({location, href, isPartiallyCurrent, isCurrent}) {
+  function getProps({ location, href, isPartiallyCurrent, isCurrent }) {
     const isActive = href === "/" ? isCurrent : isPartiallyCurrent || isCurrent;
 
     if (isActive) {
-      return {class: "nav-link-active"};
+      return { class: "nav-link-active" };
     }
     return {};
   }
 </script>
 
-<Link to="{to}" getProps="{getProps}">
-  <slot/>
+<style>
+  div {
+    display: flex;
+    align-items: center;
+  }
+</style>
+
+<Link {to} {getProps}>
+  <div>
+    <slot />
+  </div>
 </Link>
